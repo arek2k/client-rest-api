@@ -4,8 +4,116 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b29c8ba0217c7468c8b412a495935cf9",
-    "packages": [],
+    "content-hash": "55dabd6b593ef60e0626a0dc98c61780",
+    "packages": [
+        {
+            "name": "psr/http-client",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/http-client.git",
+                "reference": "22b2ef5687f43679481615605d7a15c557ce85b1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/http-client/zipball/22b2ef5687f43679481615605d7a15c557ce85b1",
+                "reference": "22b2ef5687f43679481615605d7a15c557ce85b1",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.0 || ^8.0",
+                "psr/http-message": "^1.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Http\\Client\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "https://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interface for HTTP clients",
+            "homepage": "https://github.com/php-fig/http-client",
+            "keywords": [
+                "http",
+                "http-client",
+                "psr",
+                "psr-18"
+            ],
+            "support": {
+                "source": "https://github.com/php-fig/http-client/tree/master"
+            },
+            "time": "2020-09-19T09:12:31+00:00"
+        },
+        {
+            "name": "psr/http-message",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/http-message.git",
+                "reference": "efd67d1dc14a7ef4fc4e518e7dee91c271d524e4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/http-message/zipball/efd67d1dc14a7ef4fc4e518e7dee91c271d524e4",
+                "reference": "efd67d1dc14a7ef4fc4e518e7dee91c271d524e4",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Http\\Message\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interface for HTTP messages",
+            "homepage": "https://github.com/php-fig/http-message",
+            "keywords": [
+                "http",
+                "http-message",
+                "psr",
+                "psr-7",
+                "request",
+                "response"
+            ],
+            "support": {
+                "source": "https://github.com/php-fig/http-message/tree/master"
+            },
+            "time": "2019-08-29T13:16:46+00:00"
+        }
+    ],
     "packages-dev": [
         {
             "name": "doctrine/instantiator",
@@ -539,12 +647,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "299e0a60b0f5bd3296fd52290a585ac2b2517b65"
+                "reference": "747f93928bcac855054f2781c209ec80d469fe14"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/299e0a60b0f5bd3296fd52290a585ac2b2517b65",
-                "reference": "299e0a60b0f5bd3296fd52290a585ac2b2517b65",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/747f93928bcac855054f2781c209ec80d469fe14",
+                "reference": "747f93928bcac855054f2781c209ec80d469fe14",
                 "shasum": ""
             },
             "require": {
@@ -608,7 +716,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-12-05T09:19:13+00:00"
+            "time": "2021-12-13T15:03:35+00:00"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -857,12 +965,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "02eb251b5a2c3dae82e16774eca8fabf7039fd7b"
+                "reference": "09f082e2c7564dc3a889e73015c65b836e2303a0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/02eb251b5a2c3dae82e16774eca8fabf7039fd7b",
-                "reference": "02eb251b5a2c3dae82e16774eca8fabf7039fd7b",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/09f082e2c7564dc3a889e73015c65b836e2303a0",
+                "reference": "09f082e2c7564dc3a889e73015c65b836e2303a0",
                 "shasum": ""
             },
             "require": {
@@ -952,7 +1060,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-11-29T15:44:44+00:00"
+            "time": "2021-12-13T14:59:17+00:00"
         },
         {
             "name": "sebastian/cli-parser",
@@ -2118,7 +2226,8 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": "^8.0"
+        "php": "^8.0",
+        "ext-curl": "*"
     },
     "platform-dev": [],
     "plugin-api-version": "2.1.0"
