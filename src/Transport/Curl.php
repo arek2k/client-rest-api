@@ -49,17 +49,9 @@ final class Curl implements TransportInterface
      * @param mixed $value
      * @return void
      */
-    private function setOption(int $option, mixed $value): void
+    public function setOption(int $option, mixed $value): void
     {
         curl_setopt($this->curlHandle, $option, $value);
-    }
-
-    /**
-     * @param $httpauth
-     */
-    protected function setHttpAuth($httpauth): void
-    {
-        $this->setOption(CURLOPT_HTTPAUTH, $httpauth);
     }
 
     /**
@@ -84,17 +76,37 @@ final class Curl implements TransportInterface
      */
     private function prepareCurl(RequestInterface $request, array $options = []): Response
     {
-
         $this->setOption(CURLOPT_CUSTOMREQUEST, $request->getMethod());
         $this->setOption(CURLOPT_URL, $request->getUri()->__toString());
         $this->setOption(CURLOPT_HTTPHEADER, $this->setHeaders($request->getHeaders()));
         $this->setOptionsForMethod($request);
-        $this->setOptionsFromParameter();
+        $this->setOptionsFromParameter($options);
+        $response = new Response();
 
-       return new Response();
+        $this->setOption(CURLOPT_HEADERFUNCTION, function ($ch, $data) use ($response) {
+            $str = trim($data);
+            if (strlen($str) > 0) {
+                if (str_starts_with(strtolower($str), 'http/')) {
+                    $response->setStatus($str);
+                } else {
+                    $response->addHeader($str);
+                }
+            }
+
+            return strlen($data);
+        });
+
+        $this->setOption(CURLOPT_WRITEFUNCTION, function ($ch, $data) use ($response) {
+            return $response->writeBody($data);
+        });
+
+        return $response;
     }
 
-    private function setOptionsFromParameter(): void
+    /**
+     * @param array $options
+     */
+    private function setOptionsFromParameter(array $options): void
     {
         //TODO: Implement this method
     }

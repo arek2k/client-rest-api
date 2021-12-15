@@ -2,7 +2,6 @@
 
 namespace Arek2k\RestClient;
 
-use Arek2k\RestClient\Transport\Curl;
 use Arek2k\RestClient\Transport\TransportInterface;
 use Psr\Http\Message\RequestFactoryInterface;
 use Psr\Http\Message\RequestInterface;
@@ -20,9 +19,9 @@ class Request implements TransportInterface
     private TransportInterface $transport;
     private RequestFactoryInterface $requestFactory;
 
-    public function __construct()
+    public function __construct(TransportInterface $transport)
     {
-        $this->transport = new Curl();
+        $this->transport = $transport;
         $this->requestFactory = new Psr17Factory();
     }
 
@@ -86,7 +85,7 @@ class Request implements TransportInterface
      * @param string $body
      * @return ResponseInterface
      */
-    public function request(string $method = self::GET, string $url,  array $headers = [], string $body = ''): ResponseInterface
+    public function request(string $method, string $url,  array $headers = [], string $body = ''): ResponseInterface
     {
         $request = $this->createRequest($method, $url,  $headers, $body);
         return $this->sendRequest($request);
